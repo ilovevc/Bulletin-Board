@@ -1,0 +1,49 @@
+﻿@model Bulletin_Board.Models.Zhibanyuan
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>姓名</td>
+                        <td>操作</td>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    
+                    @{ 
+                        
+                            var users = ViewBag.users;
+                            foreach (var user in users)
+                            {
+                            <tr>
+                                <td>@user.Name</td>
+                                <td>@Html.ActionLink("删除","DeleteUser",new { Id=user.Id})</td>
+                            </tr>
+                                }
+                            
+                        }
+                </tbody>
+            </table>
+        </div>
+     @using (Html.BeginForm())
+     {
+         @Html.EditorFor(m=>m.Name)
+
+         <input type="submit" value="Add"/>
+     }
+    </div>
+</body>
+</html>
