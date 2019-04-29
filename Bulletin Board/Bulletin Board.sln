@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulletin Board", "Bulletin Board\Bulletin Board.csproj", "{9C7AAA25-C4FD-4455-94FD-EBFE8B3980FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C7AAA25-C4FD-4455-94FD-EBFE8B3980FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C7AAA25-C4FD-4455-94FD-EBFE8B3980FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C7AAA25-C4FD-4455-94FD-EBFE8B3980FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C7AAA25-C4FD-4455-94FD-EBFE8B3980FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DC651C0-B405-45B0-B1C5-8A6C47AE0516}
+	EndGlobalSection
+EndGlobal
