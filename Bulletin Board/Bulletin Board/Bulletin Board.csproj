@@ -112,6 +112,7 @@
     <None Include="packages.config" />
     <Content Include="Views\home\index.cshtml" />
     <Content Include="Views\home\AddUser.cshtml" />
+    <Content Include="Views\home\EditMessage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
