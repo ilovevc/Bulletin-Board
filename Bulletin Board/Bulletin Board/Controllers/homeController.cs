@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net;
 using Bulletin_Board.Models;
+using System.Data;
+using System.Data.Entity;
 
 namespace Bulletin_Board.Controllers
 {
@@ -54,6 +56,55 @@ namespace Bulletin_Board.Controllers
             db.Zhibanyuans.Remove(zby);
             db.SaveChanges();
             return RedirectToAction("AddUser");
+        }
+
+        public ActionResult EditMessage()
+        {
+
+            ViewBag.userlist = new SelectList(db.Zhibanyuans, "Name", "Name");
+
+            try
+            {
+                if (db.Msgs.Count() > 0)
+                {
+
+                    MessageModel msg = db.Msgs.First();
+                    return View(msg);
+                }
+            }
+            catch
+            {
+                return View();
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditMessage(MessageModel remsg)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ViewBag.userlist = new SelectList(db.Zhibanyuans, "Name", "Name");
+            if (db.Msgs.Count()>0)
+            {
+                
+                db.Entry(remsg).State = EntityState.Modified;
+                db.SaveChanges();
+                
+                
+            }
+            else
+            {
+                db.Msgs.Add(remsg);
+                db.SaveChanges();
+
+            }
+
+            return View(remsg);
         }
     }
 }
