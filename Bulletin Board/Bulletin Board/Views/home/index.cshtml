@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Bulletin_Board.Models.MessageModel
+@{
     Layout = null;
 }
 
@@ -8,10 +9,35 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
+    <link href="~/Content/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-    <h1>test</h1>
+    <div class="main" style="width:@ViewBag.w;height:@ViewBag.h;">
+    <div class="sub1">
+        
+        <div class="msg2">
+            <div class="datediv">
+                <p>@DateTime.Now.Date.ToString("yyyy年M月dd日 dddd")</p>
+            </div>
+            <div class="user1">
+
+                <label class="font1">值班员：</label>
+                <p class="font2">@Model.zhiban1</p>
+                <label class="font1">副班：</label>
+                <p class="font2">@Model.fuban</p>
+            </div>
+            <div class="user2">
+                <label class="font1">周末值班员：</label>
+                <span class="font2">@Model.zhiban2</span>
+            </div>
+        </div>
+        
+    </div>
+    <div class="sub1">
+        <div class="msg1">
+            @Html.Raw(Model.msg)
+        </div>
+    </div>
     </div>
 </body>
 </html>

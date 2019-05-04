@@ -17,7 +17,29 @@ namespace Bulletin_Board.Controllers
         // GET: home
         public ActionResult Index()
         {
-            return View();
+
+            var rpmsg = db.Msgs.First();
+            if(Request["w"]!=null && Request["h"]!=null)
+            {
+                ViewBag.w = Request["w"];
+                ViewBag.h = Request["h"];
+
+            }
+            else
+            {
+                if(db.Msgs.First().screenwidth>0 && db.Msgs.First().screenheight>0)
+                {
+                    ViewBag.w = db.Msgs.First().screenwidth.ToString() + "px";
+                    ViewBag.h = db.Msgs.First().screenheight.ToString() + "px";
+                }
+                else
+                {
+                    ViewBag.w = "1920px";
+                    ViewBag.h = "1080px";
+                }
+                
+            }
+            return View(rpmsg);
         }
 
 
@@ -81,13 +103,14 @@ namespace Bulletin_Board.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult EditMessage(MessageModel remsg)
         {
 
-            if (!ModelState.IsValid)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
             ViewBag.userlist = new SelectList(db.Zhibanyuans, "Name", "Name");
             if (db.Msgs.Count()>0)
             {
