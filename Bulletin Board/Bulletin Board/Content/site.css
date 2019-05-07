@@ -1,6 +1,6 @@
 ﻿body {
     margin:0px 0px 0px 0px;
-    background-color:black;
+    /*background-color:black;*/
 }
 
 .main
@@ -17,7 +17,12 @@
     float:left;
     width:50%;
     height:100%;
+
     
+}
+.td1
+{
+    background-color:lightslategray;
 }
 .msg1
 {
@@ -29,6 +34,8 @@
     height:90%;
     padding-left:5%;
     padding-right:5%;
+    border-radius:20px;
+    overflow:hidden;
 }
 .msg2 {
     float: left;
@@ -76,4 +83,9 @@
     float:left;
     margin-left:20%;
     margin-top:0px;
+}
+.main1
+{
+    margin:0 auto;
+    width:1000px;
 }

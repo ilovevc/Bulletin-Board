@@ -8,23 +8,57 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>信息编辑</title>
     <script type="text/javascript" src="~/Scripts/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="~/Scripts/ckfinder/ckfinder.js"></script>
+    <link href="~/Content/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    <div class="main1">
         @using (Html.BeginForm())
         {
-            @Html.DropDownListFor(m => m.zhiban1, (IEnumerable<SelectListItem>)ViewBag.userlist)
-            @Html.DropDownListFor(m=>m.fuban,(IEnumerable<SelectListItem>)ViewBag.userlist)
-            @Html.DropDownListFor(m => m.zhiban2, (IEnumerable<SelectListItem>)ViewBag.userlist)
-            @Html.TextBoxFor(m => m.screenwidth)
-            @Html.TextBoxFor(m=>m.screenheight)
-            @Html.TextAreaFor(m => m.msg)
-            @Html.HiddenFor(m => m.Id)
 
-            <input type="submit" value="submit" />
+            @Html.HiddenFor(m => m.Id)
+            <table>
+                <tr>
+                    <td colspan="2" class="td1">@Html.ActionLink("值班员添加","AddUser")</td>
+                </tr>
+                <tr>
+                    <td>值班员：</td>
+                    <td>@Html.DropDownListFor(m => m.zhiban1, (IEnumerable<SelectListItem>)ViewBag.userlist)</td>
+                </tr>
+                <tr>
+                    <td>副班：</td>
+                    <td>@Html.DropDownListFor(m => m.fuban, (IEnumerable<SelectListItem>)ViewBag.userlist)</td>
+                </tr>
+                <tr>
+                    <td>周末值班：</td>
+                    <td>@Html.DropDownListFor(m => m.zhiban2, (IEnumerable<SelectListItem>)ViewBag.userlist)</td>
+                </tr>
+                <tr>
+                    <td>窗口宽度：</td>
+                    <td>@Html.TextBoxFor(m => m.screenwidth)</td>
+                </tr>
+                <tr>
+                    <td>窗口高度：</td>
+                    <td>@Html.TextBoxFor(m => m.screenheight)</td>
+                </tr>
+                <tr>
+                    <td  colspan="2">@Html.TextAreaFor(m => m.msg)</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="submit" /></td>
+                </tr>
+            </table>
+
+
+
+
+
+
+
+
+
         }
     </div>
     <script type="text/javascript">
