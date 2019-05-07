@@ -1087,6 +1087,7 @@
     <Content Include="Scripts\ckfinder\skins\v1\skin.js" />
     <Content Include="Scripts\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Scripts\ckfinder\translations.txt" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

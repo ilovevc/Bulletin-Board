@@ -54,13 +54,13 @@
             $("#div1").hide();
         }
         else {
-            setInterval(runscroll, 400);
+            setInterval(runscroll, 100);
         }
         
         function runscroll() {
             if (divheight > divscroll) {
                 $(".msg1").scrollTop(divscroll);
-                divscroll += 5;
+                divscroll += 1;
             }
             else {
                 $(".msg1").scrollTop(0);
